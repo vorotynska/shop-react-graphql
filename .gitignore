@@ -1,0 +1,35 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Node modules
+node_modules
+
+# dist и сборочные папки
+dist
+dist-ssr
+
+# Editor directories and files
+.vscode/*
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Игнорирование сгенерированных файлов
+.env
+**/dist
+**/types.ts
+**/__generated__
+
+# Исключение файлов окружения
+.env.local
+.env.*.local
