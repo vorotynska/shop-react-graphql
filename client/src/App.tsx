@@ -1,12 +1,17 @@
-import Products from "./components/Products"
+import { BrowserRouter, Routes, Route } from "react-router-dom"
+import ProductPage from "./pages/product"
+import ProductList from "./pages/products"
 
 function App() {
 
 
   return (
-    <>
-      <Products />
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<ProductList />} />
+        <Route path="/product/:id" element={<ProductPage />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
 

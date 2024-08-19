@@ -22,15 +22,15 @@ export const typeDefs = gql`
 import gql from "graphql-tag";
 export const typeDefs = gql`
   type Product {
-    id: ID!
-    title: String!
-    description: String
-    price: Float!
-    thumbnail: String
-  }
+  id: Int!
+  thumbnail: String!
+  title: String!
+  price: Float!
+  description: String!
+}
 
-  type Query {
-    products: [Product]
-   
-  }
+type Query {
+  products: [Product!]!
+  product(id: Int!): Product
+}
 `;

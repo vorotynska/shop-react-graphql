@@ -1,4 +1,4 @@
-import { RESTDataSource } from "@apollo/datasource-rest";
+import { RESTDataSource } from "@apollo/datasource-rest"
 
 export class ProductAPI extends RESTDataSource {
     baseURL = 'https://dummyjson.com/'
@@ -9,5 +9,8 @@ export class ProductAPI extends RESTDataSource {
         // console.log(response); // добавьте это для отладки
         return response.products; // предполагая, что API возвращает объект с ключом 'products', который содержит массив продуктов
     }
-
+    
+    async getProduct(id: number) {
+        return this.get(`products/${id}`);
+    }
 }

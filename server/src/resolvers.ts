@@ -6,6 +6,11 @@ export const resolvers: Resolvers = {
     products: (_, __, { dataSources }) => {
       return dataSources.productAPI.getProducts();
     },
+   
+    // get a single product by ID, for the product page
+    product: (_, { id }, {dataSources }) => {
+      return dataSources.productAPI.getProduct(id);
+    }
   },
 };
 
