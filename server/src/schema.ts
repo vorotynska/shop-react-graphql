@@ -20,17 +20,27 @@ export const typeDefs = gql`
    }
 `; */
 import gql from "graphql-tag";
+
 export const typeDefs = gql`
+  type Review {
+  rating: Int!
+  comment: String!
+  date: String!
+  username: String!
+}
+
   type Product {
   id: Int!
   thumbnail: String!
   title: String!
   price: Float!
   description: String!
+  reviews: [Review!]!
 }
 
 type Query {
   products: [Product!]!
   product(id: Int!): Product
 }
+
 `;

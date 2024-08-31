@@ -1,6 +1,7 @@
 
-import { useQuery, gql } from "@apollo/client";
+import { useQuery} from "@apollo/client";
 import { Link } from "react-router-dom";
+import { gql } from "../__generated__";
 
 const PRODUCTS = gql(`
 query GetProducts {
@@ -27,10 +28,10 @@ const ProductList = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 {data?.products.map((product) => (
                     <Link key={product.id} to={`/product/${product.id}`} className="border p-4 rounded-lg block hover:shadow-lg transition-shadow">
-                        <img src={product.thumbnail || ""} alt={product.title || ""} className="mb-4" />
-                        <h2 className="text-xl font-bold">{product.title || ""}</h2>
-                        <p>{product.description || ""}</p>
-                        <p className="font-bold mt-2">${product.price || 0}</p>
+                        <img src={product.thumbnail} alt={product.title} className="mb-4" />
+                        <h2 className="text-xl font-bold">{product.title}</h2>
+                        <p>{product.description}</p>
+                        <p className="font-bold mt-2">${product.price}</p>
 
                     </Link>
                 ))}

@@ -8,9 +8,15 @@ export const resolvers: Resolvers = {
     },
    
     // get a single product by ID, for the product page
-    product: (_, { id }, {dataSources }) => {
+    product: (_, { id }, { dataSources }) => {
       return dataSources.productAPI.getProduct(id);
     }
+  },
+
+  Product: {
+    reviews: (parent, _, { dataSources }) => {
+      return dataSources.productAPI.getProductReviews(parent.id);
+    },
   },
 };
 
